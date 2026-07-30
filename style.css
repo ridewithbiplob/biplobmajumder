@@ -1,46 +1,122 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-    background:#f5f7fa;
-    color:#333;
-    text-align:center;
+    font-family:'Poppins',sans-serif;
+    background:#f8f9fa;
+    color:#222;
+    line-height:1.6;
 }
 
-h1{
-    background:#0d6efd;
-    color:white;
-    padding:25px;
-    font-size:48px;
+/* Header */
+header{
+    background:#ffffff;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
-p{
-    font-size:20px;
-    margin:20px;
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#ff6b00;
 }
 
-h2{
-    margin-top:40px;
-    color:#0d6efd;
-    font-size:35px;
-}
-
-h3{
-    margin-top:40px;
-    color:#ff6600;
-    font-size:30px;
-}
-
-a{
-    color:#0d6efd;
+nav a{
     text-decoration:none;
-    font-weight:bold;
+    color:#333;
+    margin-left:25px;
+    font-weight:600;
+    transition:.3s;
 }
 
-a:hover{
-    color:red;
+nav a:hover{
+    color:#ff6b00;
+}
+
+/* Hero Section */
+.hero{
+    height:90vh;
+    background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1600") center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#fff;
+    padding:20px;
+}
+
+.hero-content h1{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+.hero-content p{
+    font-size:22px;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    margin:10px;
+    padding:14px 28px;
+    background:#ff6b00;
+    color:#fff;
+    text-decoration:none;
+    border-radius:50px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#222;
+}
+
+/* Section */
+section{
+    padding:80px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:36px;
+    margin-bottom:40px;
+    color:#ff6b00;
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+header{
+    flex-direction:column;
+}
+
+nav{
+    margin-top:15px;
+}
+
+nav a{
+    display:inline-block;
+    margin:8px;
+}
+
+.hero-content h1{
+    font-size:40px;
+}
+
+.hero-content p{
+    font-size:18px;
+}
+
 }
