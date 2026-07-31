@@ -23,15 +23,15 @@
             overflow-x: hidden;
         }
 
-        /* Banner Container (এখন শুধু ১টি সিঙ্গেল পিকচার) */
+        /* Header Background (লোগো বামে নেওয়ার কারণে বাইকের ছবি এখন সম্পূর্ণ খালি ও স্পষ্ট) */
         header {
             position: relative;
-            height: 450px;
+            height: 480px;
             background: url('https://i.postimg.cc/MHYHTHss/IMG-20250601-WA0009.jpg') no-repeat center center/cover;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+            align-items: flex-start; /* কন্টেন্ট উপরে নিয়ে আসার জন্য */
+            justify-content: flex-start; /* কন্টেন্ট বামে নিয়ে আসার জন্য */
+            text-align: left;
             color: white;
         }
 
@@ -41,44 +41,39 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.75));
+            background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.65));
             z-index: 1;
         }
 
         .header-content {
             position: relative;
             z-index: 2;
-            padding: 20px;
+            padding: 25px 20px;
+            max-width: 85%;
         }
 
         .profile-pic {
-            width: 140px;
-            height: 140px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
-            border: 4px solid #ffcc00;
+            border: 3px solid #ffcc00;
             object-fit: cover;
-            margin-bottom: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-            transition: transform 0.3s ease;
-        }
-
-        .profile-pic:hover {
-            transform: scale(1.05);
+            margin-bottom: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
 
         header h1 {
-            font-size: 2.6rem;
-            margin-bottom: 8px;
+            font-size: 1.8rem;
+            margin-bottom: 5px;
             color: #ffcc00;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
             font-weight: 700;
         }
 
         header p {
-            font-size: 1.25rem;
-            max-width: 650px;
-            margin: 0 auto 25px auto;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
             font-weight: 400;
         }
 
@@ -86,14 +81,14 @@
         .social-btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             background: linear-gradient(45deg, #1877f2, #00c6ff);
             color: white;
-            padding: 14px 32px;
+            padding: 10px 20px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             box-shadow: 0 0 15px rgba(24, 119, 242, 0.8);
             animation: pulseGlow 2s infinite;
             transition: all 0.3s ease;
@@ -114,7 +109,7 @@
         /* Main Container */
         .container {
             max-width: 1050px;
-            margin: 40px auto;
+            margin: 30px auto;
             padding: 0 20px;
         }
 
@@ -156,7 +151,7 @@
             line-height: 1.8;
         }
 
-        /* Gallery Slideshow (আমার সম্পর্কে-র পর নতুন সেকশন) */
+        /* Gallery Slideshow */
         .gallery-slider {
             position: relative;
             width: 100%;
@@ -333,25 +328,15 @@
             section {
                 padding: 20px 15px;
             }
-            header h1 {
-                font-size: 2.1rem;
-            }
-            header p {
-                font-size: 1.05rem;
-            }
-            .social-btn {
-                padding: 12px 24px;
-                font-size: 0.95rem;
-            }
             .gallery-slider {
-                height: 250px; /* মোবাইলে গ্যালারি উচ্চতা অ্যাডজাস্ট করা হয়েছে */
+                height: 250px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header (সিঙ্গেল ব্যানার ছবি সহ) -->
+    <!-- Header (বাইকের পুরো পিকচার স্পষ্ট দেখার জন্য বামে সেট করা কন্টেন্ট) -->
     <header>
         <div class="header-overlay"></div>
         <div class="header-content">
@@ -374,7 +359,7 @@
             </p>
         </section>
 
-        <!-- ২. নতুন গ্যালারি স্লাইডশো সেকশন (আপনার ছবিগুলোর অটো স্লাইডার) -->
+        <!-- ২. আমার গ্যালারি সেকশন -->
         <section>
             <h2>আমার গ্যালারি</h2>
             <div class="gallery-slider">
