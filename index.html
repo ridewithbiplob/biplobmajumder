@@ -1,339 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ride With Biplob</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>আমার ভ্লগ ও ব্লগ সাইট</title>
+  <style>
+    /* বেসিক স্টাইল */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f6f9; color: #333; line-height: 1.6; }
+    
+    /* হেডার */
+    header { background: #1877f2; color: #fff; padding: 20px 0; text-align: center; }
+    header h1 { margin-bottom: 5px; }
+    header p { font-size: 14px; opacity: 0.9; }
 
-<link rel="stylesheet" href="style.css">
+    /* মূল কন্টেইনার (লেআউট) */
+    .container { max-width: 1100px; margin: 20px auto; padding: 0 15px; display: flex; flex-wrap: wrap; gap: 20px; }
+    
+    /* বাম পাশের মূল লেখার অংশ */
+    .main-content { flex: 2; min-width: 300px; }
+    
+    /* ডান পাশের সাইডবার (ভিডিও) */
+    .sidebar { flex: 1; min-width: 300px; }
+
+    /* কার্ড ডিজাইন */
+    .card { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+    .card img { width: 100%; border-radius: 6px; margin-bottom: 10px; }
+    .card h2 { font-size: 20px; color: #1877f2; margin-bottom: 8px; }
+    .card .date { font-size: 12px; color: #777; margin-bottom: 12px; }
+    .card p { font-size: 15px; color: #555; }
+
+    /* ভিডিও প্লেয়ার কন্টেইনার */
+    .video-title { font-size: 18px; font-weight: bold; margin-bottom: 15px; color: #1877f2; border-bottom: 2px solid #1877f2; padding-bottom: 5px; }
+    .video-responsive { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; margin-bottom: 15px; }
+    .video-responsive iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+    /* ফুটার */
+    footer { text-align: center; padding: 20px; background: #333; color: #fff; margin-top: 30px; font-size: 14px; }
+
+    /* মোবাইলের জন্য রেসপনসিভ */
+    @media (max-width: 768px) {
+      .container { flex-direction: column; }
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
-    <div class="logo">
-        Ride With Biplob
-    </div>
-
-<nav>
-<a href="#home">Home</a>
-<a href="#travel">Travel</a>
-<a href="#food">Food Review</a>
-<a href="#temple">Temple</a>
-<a href="#blog">Blog</a>
-<a href="#gallery">Gallery</a>
-<a href="#contact">Contact</a>
-</nav>
-</header>
-
-<section class="hero">
-
-<div class="hero-content">
-
-<h1>Ride With Biplob</h1>
-
-<section id="temple">
-
-<h2 class="section-title">Temple History</h2>
-
-<div class="cards">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1548013146-72479768bada">
-<h3>Ancient Temple</h3>
-<p>
-Discover the history, architecture and spiritual stories of ancient temples.
-</p>
-</div>
-
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1605640840605-14ac1855827b">
-<h3>Indian Temple</h3>
-<p>
-Explore famous temples, traditions and cultural heritage.
-</p>
-</div>
-
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220">
-<h3>Spiritual Journey</h3>
-<p>
-Learn about holy places and their amazing stories.
-</p>
-</div>
-
-</div>
-
-</section>
-
-<div class="buttons">
-
-<a class="btn"
-href="https://www.facebook.com/biplobmajumder99"
-target="_blank">
-Facebook
-</a>
-
-<a class="btn"
-href="https://www.youtube.com/@parthib_2023"
-target="_blank">
-YouTube
-</a>
-
-<a class="btn"
-href="https://www.instagram.com/parthib_2023"
-target="_blank">
-Instagram
-</a>
-
-<a class="btn"
-href="mailto:ridewithbiplob@gmail.com">
-Email
-</a>
-
-</div>
-
-</div>
-
-</section>
-<section id="travel">
-
-<h2 class="section-title">Travel</h2>
-
-<div class="cards">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b">
-<h3>Mountain Journey</h3>
-<p>
-Explore beautiful mountains, nature and amazing landscapes.
-</p>
-</div>
-
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
-<h3>Road Trip</h3>
-<p>
-Experience exciting road trips and unforgettable adventures.
-</p>
-</div>
-
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
-<h3>Nature Explore</h3>
-<p>
-Discover hidden places and beautiful natural views.
-</p>
-</div>
-
-</div>
-
-</section>
-
-
-<section id="food">
-
-<h2 class="section-title">Food Review</h2>
-
-<div class="cards">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4">
-<h3>Local Food</h3>
-<p>
-Taste delicious traditional foods and share real food experiences.
-</p>
-</div>
-
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836">
-<h3>Restaurant Review</h3>
-<p>
-Explore amazing restaurants and discover new flavours.
-</p>
-</div>
-
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1547592180-85f173990554">
-<h3>Traditional Taste</h3>
-<p>
-Experience local culture through authentic foods.
-</p>
-</div>
-
-</div>
-
-</section>
-
-
-<section id="temple">
-<h2 class="section-title">Temple History</h2>
-<p>
-Explore ancient temples, history and spiritual stories.
-</p>
-</section>
-
-
-<section id="blog">
-
-<h2 class="section-title">Travel Blog</h2>
-
-<div class="cards">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
-<h3>My Travel Story</h3>
-<p>
-Read my travel experiences, journeys and memorable moments.
-</p>
-</div>
-
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff">
-<h3>Beautiful Places</h3>
-<p>
-Explore unknown places and amazing destinations.
-</p>
-</div>
-
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e">
-<h3>Travel Tips</h3>
-<p>
-Useful tips for budget travel and adventures.
-</p>
-</div>
-
-</div>
-
-</section>
-
-
-<section id="gallery">
-
-<h2 class="section-title">Gallery</h2>
-
-<div class="cards">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429">
-<h3>Nature View</h3>
-<p>
-Beautiful moments captured during travel.
-</p>
-</div>
-
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1511497584788-876760111969">
-<h3>Travel Memories</h3>
-<p>
-Collection of amazing travel photographs.
-</p>
-</div>
-
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e">
-<h3>Adventure</h3>
-<p>
-Exploring new places and creating memories.
-</p>
-</div>
-
-</div>
-
-</section>
-<section id="map">
-
-<h2 class="section-title">Find Us</h2>
-
-<div class="map-container">
-
-<iframe 
-src="https://maps.google.com/maps?q=Bangladesh&t=&z=7&ie=UTF8&iwloc=&output=embed"
-width="100%" 
-height="400"
-style="border:0;"
-allowfullscreen=""
-loading="lazy">
-</iframe>
-
-</div>
-
-</section>
-<section id="contact">
-
-<h2 class="section-title">Contact</h2>
-
-<div class="contact-box">
-
-<h3>Ride With Biplob</h3>
-
-<p>
-Travel • Food Review • Temple History • Daily Vlog
-</p>
-
-<p>
-📧 Email: ridewithbiplob@gmail.com
-</p>
-
-
-<div class="buttons">
-
-<a class="btn" 
-href="https://www.facebook.com/biplobmajumder99"
-target="_blank">
-Facebook
-</a>
-
-
-<a class="btn"
-href="https://www.youtube.com/@parthib_2023"
-target="_blank">
-YouTube
-</a>
-
-
-<a class="btn"
-href="https://www.instagram.com/parthib_2023"
-target="_blank">
-Instagram
-</a>
-
-</div>
-
-</div>
-
-</section>
-<p style="max-width:900px;margin:auto;text-align:center;font-size:18px;line-height:1.8;">
-
-Welcome to <strong>Ride With Biplob</strong>.
-
-This website is dedicated to travel, food reviews, temple history, and daily vlogs.
-
-My goal is to explore beautiful places, discover local culture, visit historical temples, taste authentic food, and share real travel experiences with everyone.
-
-Every journey has a story, and this website is where those stories come to life.
-
-</p>
-<footer>
-
-<p>
-© 2026 Ride With Biplob | Travel • Food • Temple • Vlog
-</p>
-
-</footer>
-</section>
-<script src="script.js"></script>
+  <!-- সাইট হেডার -->
+  <header>
+    <h1>আমার বাংলা ভ্লগ ও ব্লগ</h1>
+    <p>আমার ভ্রমণ, গল্প এবং নিয়মিত ফেসবুক ভ্লগ আপডেট</p>
+  </header>
+
+  <!-- মূল কন্টেন্ট এরিয়া -->
+  <div class="container">
+    
+    <!-- বাম পাশ: আপনার নিয়মিত ব্লগ বা লেখা -->
+    <main class="main-content">
+      
+      <!-- পোস্ট ১ (নতুন পোস্ট সবার উপরে) -->
+      <article class="card">
+        <h2>আজকের ভ্রমণের অভিজ্ঞতা ও কিছু কথা</h2>
+        <div class="date">প্রকাশিত: ১ আগস্ট, ২০২৬</div>
+        <p>আজকে আমরা গিয়েছিলাম গ্রামের এক সুন্দর নদীর পাড়ে। সেখানকার প্রকৃতি আর মানুষের জীবনযাত্রা সত্যিই অসাধারণ। বিস্তারিত লেখায় আপনারা জানতে পারবেন আমাদের এই পুরো দিনের গল্প...</p>
+      </article>
+
+      <!-- পোস্ট ২ -->
+      <article class="card">
+        <h2>কেন আমি ভ্লগ বানানো শুরু করলাম?</h2>
+        <div class="date">প্রকাশিত: ২৫ জুলাই, ২০২৬</div>
+        <p>ভ্লগিং আমার ভালোবাসার একটি জায়গা। মানুষের কাছে নতুন নতুন জায়গা এবং সুন্দর মুহূর্তগুলো তুলে ধরতেই মূলত আমার এই পথচলা শুরু...</p>
+      </article>
+
+    </main>
+
+    <!-- ডান পাশ: সাইডবার (ফেসবুক ভিডিও) -->
+    <aside class="sidebar">
+      <div class="card">
+        <div class="video-title">🎥 সর্বশেষ ফেসবুক ভ্লগ</div>
+        
+        <!-- ফেসবুক ভিডিও এম্বেড (নতুন ভিডিও এখানে বসাবেন) -->
+        <div class="video-responsive">
+          <!-- নিচের src="..." এর ভেতরে আপনার ফেসবুক ভিডিওর Embed Link বসাবেন -->
+          <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Ffacebook%2Fvideos%2F10153231379946729%2F&show_text=false&width=560" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+
+        <p style="font-size: 13px; color: #666; text-align: center;">ভিডিওটি ভালো লাগলে ফেসবুক পেজে ফলো করুন!</p>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- ফুটার -->
+  <footer>
+    <p>&copy; ২০২৬ আমার ভ্লগ সাইট। সর্বস্বত্ব সংরক্ষিত।</p>
+  </footer>
 
 </body>
 </html>
