@@ -3,42 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>আমার ভ্লগ ও ব্লগ সাইট</title>
+  <title>Biplob Majumder - Travel, History & Food Vlogs</title>
   <style>
-    /* বেসিক স্টাইল */
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f6f9; color: #333; line-height: 1.6; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; color: #333; line-height: 1.6; }
     
-    /* হেডার */
-    header { background: #1877f2; color: #fff; padding: 20px 0; text-align: center; }
-    header h1 { margin-bottom: 5px; }
-    header p { font-size: 14px; opacity: 0.9; }
-
-    /* মূল কন্টেইনার (লেআউট) */
-    .container { max-width: 1100px; margin: 20px auto; padding: 0 15px; display: flex; flex-wrap: wrap; gap: 20px; }
+    /* হেডার সেকশন */
+    header { background: linear-gradient(135deg, #1877f2, #0056b3); color: white; text-align: center; padding: 40px 20px; }
+    header h1 { font-size: 2.2rem; margin-bottom: 8px; }
+    header p { font-size: 1.1rem; opacity: 0.9; }
     
-    /* বাম পাশের মূল লেখার অংশ */
-    .main-content { flex: 2; min-width: 300px; }
-    
-    /* ডান পাশের সাইডবার (ভিডিও) */
+    /* মূল লেআউট */
+    .container { max-width: 1100px; margin: 25px auto; padding: 0 15px; display: flex; flex-wrap: wrap; gap: 20px; }
+    .main-posts { flex: 2; min-width: 300px; }
     .sidebar { flex: 1; min-width: 300px; }
 
     /* কার্ড ডিজাইন */
-    .card { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-    .card img { width: 100%; border-radius: 6px; margin-bottom: 10px; }
-    .card h2 { font-size: 20px; color: #1877f2; margin-bottom: 8px; }
-    .card .date { font-size: 12px; color: #777; margin-bottom: 12px; }
-    .card p { font-size: 15px; color: #555; }
+    .card { background: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+    .card h2 { color: #1877f2; font-size: 1.3rem; margin-bottom: 5px; }
+    .card .date { font-size: 0.85rem; color: #777; margin-bottom: 12px; }
+    .card p { font-size: 0.98rem; color: #444; }
 
-    /* ভিডিও প্লেয়ার কন্টেইনার */
-    .video-title { font-size: 18px; font-weight: bold; margin-bottom: 15px; color: #1877f2; border-bottom: 2px solid #1877f2; padding-bottom: 5px; }
-    .video-responsive { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; margin-bottom: 15px; }
+    /* ভিডিও বক্স */
+    .sidebar-title { font-size: 1.1rem; font-weight: bold; color: #1877f2; margin-bottom: 15px; border-bottom: 2px solid #1877f2; padding-bottom: 5px; }
+    .video-responsive { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; }
     .video-responsive iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
     /* ফুটার */
-    footer { text-align: center; padding: 20px; background: #333; color: #fff; margin-top: 30px; font-size: 14px; }
-
-    /* মোবাইলের জন্য রেসপনসিভ */
+    footer { text-align: center; padding: 20px; background: #222; color: white; margin-top: 30px; font-size: 0.9rem; }
+    
     @media (max-width: 768px) {
       .container { flex-direction: column; }
     }
@@ -46,54 +39,52 @@
 </head>
 <body>
 
-  <!-- সাইট হেডার -->
+  <!-- হেডার (আপনার নাম ও বায়ো অনুযায়ী) -->
   <header>
-    <h1>আমার বাংলা ভ্লগ ও ব্লগ</h1>
-    <p>আমার ভ্রমণ, গল্প এবং নিয়মিত ফেসবুক ভ্লগ আপডেট</p>
+    <h1>Biplob Majumder</h1>
+    <p>🌍 Travel 📜 History 🍴 Food | Bagerhat (চিতলমারী)</p>
   </header>
 
-  <!-- মূল কন্টেন্ট এরিয়া -->
   <div class="container">
     
-    <!-- বাম পাশ: আপনার নিয়মিত ব্লগ বা লেখা -->
-    <main class="main-content">
+    <!-- বাম পাশ: আপনার লেখার অংশ -->
+    <main class="main-posts">
       
-      <!-- পোস্ট ১ (নতুন পোস্ট সবার উপরে) -->
+      <!-- নতুন পোস্ট দিলে এই <article class="card">...</article> অংশটুকু কপি করে ঠিক নিচে নিচে বসাবেন -->
       <article class="card">
-        <h2>আজকের ভ্রমণের অভিজ্ঞতা ও কিছু কথা</h2>
+        <h2>চিতলমারীর সুন্দর এক বিকেল ও আমাদের লোকাল খাবার</h2>
         <div class="date">প্রকাশিত: ১ আগস্ট, ২০২৬</div>
-        <p>আজকে আমরা গিয়েছিলাম গ্রামের এক সুন্দর নদীর পাড়ে। সেখানকার প্রকৃতি আর মানুষের জীবনযাত্রা সত্যিই অসাধারণ। বিস্তারিত লেখায় আপনারা জানতে পারবেন আমাদের এই পুরো দিনের গল্প...</p>
+        <p>দক্ষিণ-পশ্চিমাঞ্চলের বাগেরহাট আর চিতলমারীর নদীঘেরা আবহাওয়া সবসময়ই অসাধারণ। আজকে ঘুরতে গিয়েছিলাম চমৎকার একটি স্থানে, সাথে সেখানকার ঐতিহ্যবাহী খাবারের স্বাদ নিলাম...</p>
       </article>
 
-      <!-- পোস্ট ২ -->
       <article class="card">
-        <h2>কেন আমি ভ্লগ বানানো শুরু করলাম?</h2>
-        <div class="date">প্রকাশিত: ২৫ জুলাই, ২০২৬</div>
-        <p>ভ্লগিং আমার ভালোবাসার একটি জায়গা। মানুষের কাছে নতুন নতুন জায়গা এবং সুন্দর মুহূর্তগুলো তুলে ধরতেই মূলত আমার এই পথচলা শুরু...</p>
+        <h2>বাগেরহাটের ঐতিহাসিক স্থান ভ্রমণের গল্প</h2>
+        <div class="date">প্রকাশিত: ২৮ জুলাই, ২০২৬</div>
+        <p>ইতিহাস সবসময় আমাদের নতুন কিছু শেখায়। দক্ষিণ-পশ্চিমাঞ্চলের সমৃদ্ধ ইতিহাস আর প্রত্নতাত্ত্বিক সৌন্দর্যের খোজে আজকের এই যাত্রা...</p>
       </article>
 
     </main>
 
-    <!-- ডান পাশ: সাইডবার (ফেসবুক ভিডিও) -->
+    <!-- ডান পাশ: নতুন ফেসবুক ভিডিও -->
     <aside class="sidebar">
       <div class="card">
-        <div class="video-title">🎥 সর্বশেষ ফেসবুক ভ্লগ</div>
+        <div class="sidebar-title">🎥 সর্বশেষ ফেসবুক ভ্লগ</div>
         
-        <!-- ফেসবুক ভিডিও এম্বেড (নতুন ভিডিও এখানে বসাবেন) -->
         <div class="video-responsive">
-          <!-- নিচের src="..." এর ভেতরে আপনার ফেসবুক ভিডিওর Embed Link বসাবেন -->
+          <!-- নিচে src="" এর জায়গায় আপনার নতুন ফেসবুক ভিডিওর Embed Link বসাবেন -->
           <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Ffacebook%2Fvideos%2F10153231379946729%2F&show_text=false&width=560" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
         </div>
 
-        <p style="font-size: 13px; color: #666; text-align: center;">ভিডিওটি ভালো লাগলে ফেসবুক পেজে ফলো করুন!</p>
+        <p style="font-size: 12px; color: #666; text-align: center; margin-top: 10px;">
+          নতুন ভিডিও দেখতে ফেসবুক পেজটি ফলো করে রাখুন!
+        </p>
       </div>
     </aside>
 
   </div>
 
-  <!-- ফুটার -->
   <footer>
-    <p>&copy; ২০২৬ আমার ভ্লগ সাইট। সর্বস্বত্ব সংরক্ষিত।</p>
+    <p>&copy; ২০২৬ Biplob Majumder | All Rights Reserved</p>
   </footer>
 
 </body>
