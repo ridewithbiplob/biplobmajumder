@@ -196,6 +196,7 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
+            cursor: pointer;
         }
 
         .news-content {
@@ -214,9 +215,16 @@
 
         .news-title {
             font-size: 1.2rem;
-            color: #0f172a;
+            color: #1877f2;
             margin: 10px 0;
             font-weight: 700;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .news-title:hover {
+            color: #0d5db8;
+            text-decoration: underline;
         }
 
         .news-info {
@@ -243,10 +251,24 @@
             line-height: 1.6;
         }
 
+        .read-more-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #1877f2;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .read-more-link:hover {
+            text-decoration: underline;
+        }
+
         /* See More Button Style */
         .see-more-container {
             text-align: center;
             margin-top: 25px;
+            display: none;
         }
 
         .see-more-btn {
@@ -267,6 +289,65 @@
         .see-more-btn:hover {
             background: #1877f2;
             color: #fff;
+        }
+
+        /* Modal / Pop-up Window for Detailed News */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 9999; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.7); 
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 25px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 700px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .close-modal {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .close-modal:hover {
+            color: #000;
+        }
+
+        .modal-img {
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .modal-body {
+            font-size: 1.05rem;
+            color: #334155;
+            line-height: 1.8;
+            margin-top: 15px;
         }
 
         /* Gallery Slideshow */
@@ -400,8 +481,8 @@
             color: #475569;
         }
 
-        /* Class to Hide Extra Items for See More */
-        .hidden-card {
+        /* Class to Hide Extra Items */
+        .hidden-item {
             display: none !important;
         }
 
@@ -453,6 +534,10 @@
             .gallery-slider {
                 height: 250px;
             }
+            .modal-content {
+                margin: 15% auto;
+                padding: 18px;
+            }
         }
     </style>
 </head>
@@ -488,58 +573,46 @@
             </p>
         </section>
 
-        <!-- ২. ভ্রমণ গাইড ও নিউজ ব্লগের সেকশন -->
+        <!-- ২. ভ্রমণ গাইড ও রুট ম্যাপ -->
         <section>
             <h2>ভ্রমণ গাইড ও রুট ম্যাপ</h2>
-            <div class="travel-news-grid">
+            <div class="travel-news-grid" id="newsGrid">
                 
-                <!-- গাইড ১ -->
+                <!-- পোস্ট ১ -->
                 <div class="news-card">
-                    <img src="https://i.postimg.cc/3xJfSqmF/FB-IMG-1774373034055.jpg" alt="খড়মখালি শিব মন্দির" class="news-img">
+                    <img src="https://i.postimg.cc/zBxGWvm4/chitalmari.png" alt="খড়মখালি শিব মন্দির" class="news-img" onclick="openModal('modal1')">
                     <div class="news-content">
                         <span class="news-tag">চিতলমারী ট্যুর</span>
-                        <h3 class="news-title">খড়মখালি গরিবপুর ভাইরাল শিব মন্দির ভ্রমণ গাইড</h3>
+                        <h3 class="news-title" onclick="openModal('modal1')">খড়মখালি গরিবপুর ভাইরাল শিব মন্দির ভ্রমণ গাইড</h3>
                         <div class="news-info">
                             <p><i class="fas fa-route"></i> <strong>যাতায়াত:</strong> চিতলমারী বাজার থেকে ইজিবাইক বা বাইকে ১৫ মিনিট।</p>
                             <p><i class="fas fa-money-bill-wave"></i> <strong>ভাড়া:</strong> লোকাল ইজিবাইক ২০-৩০ টাকা।</p>
                         </div>
-                        <p class="news-desc">প্রাচীন এই মন্দিরটি চিতলমারীর অত্যন্ত জনপ্রিয় একটি স্থান। বাইকে সরাসরি মন্দিরের একদম সামনে পর্যন্ত পৌঁছে যাওয়া যায়। বিকেলের পরিবেশ বেশ সুন্দর।</p>
+                        <p class="news-desc">প্রাচীন এই মন্দিরটি চিতলমারীর অত্যন্ত জনপ্রিয় একটি স্থান। বাইকে সরাসরি মন্দিরের একদম সামনে পর্যন্ত পৌঁছে যাওয়া যায়...</p>
+                        <span class="read-more-link" onclick="openModal('modal1')">বিস্তারিত পড়ুন <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </div>
 
-                <!-- গাইড ২ -->
+                <!-- পোস্ট ২ -->
                 <div class="news-card">
-                    <img src="https://i.postimg.cc/XvMrQRyJ/lkk-(187)-JPG.jpg" alt="প্রশান্তি ক্যাফে" class="news-img">
+                    <img src="https://i.postimg.cc/XvMrQRyJ/lkk-(187)-JPG.jpg" alt="প্রশান্তি ক্যাফে" class="news-img" onclick="openModal('modal2')">
                     <div class="news-content">
                         <span class="news-tag">খুলনা ট্যুর</span>
-                        <h3 class="news-title">রূপসা প্রশান্তি ক্যাফে ভ্রমণ ও যাতায়াত তথ্য</h3>
+                        <h3 class="news-title" onclick="openModal('modal2')">রূপসা প্রশান্তি ক্যাফে ভ্রমণ ও যাতায়াত তথ্য</h3>
                         <div class="news-info">
                             <p><i class="fas fa-route"></i> <strong>যাতায়াত:</strong> রূপসা সেতু থেকে রূপসা নদী ঘেঁষে অল্প কিছু দূর।</p>
                             <p><i class="fas fa-money-bill-wave"></i> <strong>ভাড়া:</strong> খুলনা শহর থেকে ৫০-৭০ টাকা খরচ।</p>
                         </div>
-                        <p class="news-desc">নদীর পাড়ে বসে সময় কাটানোর চমৎকার এক জায়গা। বিকেলে বাইক রাইড নিয়ে ঘুরে আসার জন্য আদর্শ লোকেশন।</p>
-                    </div>
-                </div>
-
-                <!-- গাইড ৩ (See More চাপলে বের হবে) -->
-                <div class="news-card hidden-card">
-                    <img src="https://i.postimg.cc/NfktWZVb/DSC-0129-JPG.jpg" alt="সুন্দরবন রোড রাইড" class="news-img">
-                    <div class="news-content">
-                        <span class="news-tag">বাইক রাইডিং</span>
-                        <h3 class="news-title">বাগেরহাট টু মোংলা বাইক রাইডিং রুট</h3>
-                        <div class="news-info">
-                            <p><i class="fas fa-route"></i> <strong>যাতায়াত:</strong> বাগেরহাট মহাসড়ক ধরে সোজা মোংলা পোর্ট।</p>
-                            <p><i class="fas fa-money-bill-wave"></i> <strong>ভাড়া/ফুয়েল:</strong> বাইকের জ্বালানি খরচ আনুমানিক ২০০-২৫০ টাকা।</p>
-                        </div>
-                        <p class="news-desc">দুই পাশের চমৎকার প্রকৃতির মধ্য দিয়ে বাইক চালানোর দারুণ অভিজ্ঞতা পাবেন এই রুটে। রাস্তা বেশ মসৃণ ও সুন্দর।</p>
+                        <p class="news-desc">নদীর পাড়ে বসে সময় কাটানোর চমৎকার এক জায়গা। বিকেলে বাইক রাইড নিয়ে ঘুরে আসার জন্য আদর্শ লোকেশন...</p>
+                        <span class="read-more-link" onclick="openModal('modal2')">বিস্তারিত পড়ুন <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </div>
 
             </div>
 
-            <!-- See More / See Less Button -->
-            <div class="see-more-container">
-                <button class="see-more-btn" id="toggleNewsBtn" onclick="toggleNews()">
+            <!-- See More Button for News (Auto managed by JS) -->
+            <div class="see-more-container" id="newsSeeMoreBtnContainer">
+                <button class="see-more-btn" onclick="toggleItems('newsGrid', 'newsSeeMoreBtnContainer')">
                     <span>আরও দেখুন (See More)</span> <i class="fas fa-chevron-down"></i>
                 </button>
             </div>
@@ -579,10 +652,10 @@
             </div>
         </section>
 
-        <!-- ৫. সাম্প্রতিক ভ্লগ ও ভিডিও (এখন প্রথম ৫টি দেখাবে, বাকিগুলো See More-এ থাকবে) -->
+        <!-- ৫. সাম্প্রতিক ভ্লগ ও ভিডিও -->
         <section>
             <h2>সাম্প্রতিক ভ্লগ ও ভিডিও</h2>
-            <div class="vlog-grid">
+            <div class="vlog-grid" id="vlogGrid">
                 
                 <!-- ভিডিও ১ -->
                 <div class="vlog-card">
@@ -632,59 +705,11 @@
                     </div>
                 </div>
 
-                <!-- ভিডিও ৪ -->
-                <div class="vlog-card">
-                    <div class="facebook-video-container">
-                        <iframe 
-                            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fbiplobmajumder99%2Fvideos%2F1804947420195309%2F&show_text=false&autoplay=true&mute=true" 
-                            allowfullscreen="true" 
-                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-                        </iframe>
-                    </div>
-                    <div class="vlog-content">
-                        <div class="vlog-date"><i class="far fa-calendar-alt"></i> আগস্ট ১, ২০২৬</div>
-                        <h3 class="vlog-title">চিতলমারীর চুইঝালের সিংগাড়া (ডেমো ৪)</h3>
-                        <p class="vlog-desc">চিতলমারীর বিখ্যাত ও সুস্বাদু চুইঝালের সিংগাড়া চেখে দেখার দারুণ এক অভিজ্ঞতা।</p>
-                    </div>
-                </div>
-
-                <!-- ভিডিও ৫ -->
-                <div class="vlog-card">
-                    <div class="facebook-video-container">
-                        <iframe 
-                            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fbiplobmajumder99%2Fvideos%2F880152824368680%2F&show_text=false&autoplay=true&mute=true" 
-                            allowfullscreen="true" 
-                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-                        </iframe>
-                    </div>
-                    <div class="vlog-content">
-                        <div class="vlog-date"><i class="far fa-calendar-alt"></i> আগস্ট ১, ২০২৬</div>
-                        <h3 class="vlog-title">প্রশান্তি ক্যাফে || রূপসা, খুলনা (ডেমো ৫)</h3>
-                        <p class="vlog-desc">খুলনার রূপসায় অবস্থিত মনোরম 'প্রশান্তি ক্যাফে' ভ্রমণের সুন্দর কিছু মুহূর্ত ও অভিজ্ঞতা।</p>
-                    </div>
-                </div>
-
-                <!-- ভিডিও ৬ (See More চাপলে বের হবে) -->
-                <div class="vlog-card hidden-vlog-card">
-                    <div class="facebook-video-container">
-                        <iframe 
-                            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fbiplobmajumder99%2Fvideos%2F1834029950590572%2F&show_text=false&autoplay=true&mute=true" 
-                            allowfullscreen="true" 
-                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-                        </iframe>
-                    </div>
-                    <div class="vlog-content">
-                        <div class="vlog-date"><i class="far fa-calendar-alt"></i> আগস্ট ১, ২০২৬</div>
-                        <h3 class="vlog-title">চিতলমারী খড়মখালি ভাইরাল শিব মন্দির (ডেমো ৬)</h3>
-                        <p class="vlog-desc">চিতলমারীর খড়মখালি গরিবপুর এলাকার ঐতিহাসিক ও ভাইরাল শিব মন্দির দর্শনের বিশেষ অভিজ্ঞতা।</p>
-                    </div>
-                </div>
-
             </div>
 
-            <!-- Video See More / See Less Button -->
-            <div class="see-more-container">
-                <button class="see-more-btn" id="toggleVlogBtn" onclick="toggleVlogs()">
+            <!-- See More Button for Vlogs (Auto managed by JS) -->
+            <div class="see-more-container" id="vlogSeeMoreBtnContainer">
+                <button class="see-more-btn" onclick="toggleItems('vlogGrid', 'vlogSeeMoreBtnContainer')">
                     <span>আরও ভিডিও দেখুন (See More)</span> <i class="fas fa-chevron-down"></i>
                 </button>
             </div>
@@ -711,54 +736,110 @@
 
     </div>
 
+    <!-- Modals for Travel Articles -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal1')">&times;</span>
+            <h2 style="color: #0f172a; font-size: 1.5rem; margin-bottom: 10px;">খড়মখালি গরিবপুর ভাইরাল শিব মন্দির ভ্রমণ গাইড</h2>
+            <img src="https://i.postimg.cc/zBxGWvm4/chitalmari.png" class="modal-img" alt="গরিবপুর মন্দির">
+            <div class="modal-body">
+                <p><strong>যাতায়াত মাধ্যম:</strong> চিতলমারী জিরো পয়েন্ট বা বাজার থেকে লোকাল ইজিবাইক অথবা নিজস্ব বাইক নিয়ে সরাসরি যাওয়া যায়।</p>
+                <p><strong>সময়সীমা:</strong> প্রায় ১৫ থেকে ২০ মিনিট।</p>
+                <p><strong>ভাড়া:</strong> প্রতি জন লোকাল ইজিবাইকে ২০ থেকে ৩০ টাকা।</p>
+                <br>
+                <p><strong>বিস্তারিত বর্ণনা:</strong> বাগেরহাট জেলার চিতলমারী উপজেলার খড়মখালি গরিবপুর এলাকায় অবস্থিত এই ঐতিহাসিক শিব মন্দিরটি বর্তমানে দর্শনার্থীদের কাছে খুবই আকর্ষণীয় একটি স্থান। প্রাকৃতিক পরিবেশে ঘেরা মন্দির প্রাঙ্গণ ও তার স্থাপত্য সৌন্দর্য মন কেড়ে নেওয়ার মতো। বাইক রাইডারদের জন্য রাস্তাটি বেশ আরামদায়ক এবং সরাসরি মন্দিরের চত্বরে গিয়ে বাইক পার্ক করা যায়। বিকালের সময়ে ঘুরে আসার জন্য এটি একদম পারফেক্ট একটি স্পট।</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal2')">&times;</span>
+            <h2 style="color: #0f172a; font-size: 1.5rem; margin-bottom: 10px;">রূপসা প্রশান্তি ক্যাফে ভ্রমণ ও যাতায়াত তথ্য</h2>
+            <img src="https://i.postimg.cc/XvMrQRyJ/lkk-(187)-JPG.jpg" class="modal-img" alt="প্রশান্তি ক্যাফে">
+            <div class="modal-body">
+                <p><strong>যাতায়াত মাধ্যম:</strong> খুলনা শহরের রূপসা ব্রিজ থেকে রূপসা নদীর বাঁধ ঘেঁষে ইজিবাইক বা বাইক রাইড করে যাওয়া যায়।</p>
+                <p><strong>ভাড়া:</strong> খুলনা মেইন সিটি এলাকা থেকে ৫০-৭০ টাকা খরচ হতে পারে।</p>
+                <br>
+                <p><strong>বিস্তারিত বর্ণনা:</strong> রূপসা নদীর মিষ্টি হাওয়া উপভোগ করতে করতে বিকেলের স্ন্যাক্স বা চা খাওয়ার অন্যতম জনপ্রিয় স্থান প্রশান্তি ক্যাফে। নদী ঘেঁষা খোলামেলা মনোরম পরিবেশের কারণে তরুণদের কাছে এবং বাইকারদের মাঝে এই স্পটটি বেশ প্রশংসিত।</p>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer>
         <p>&copy; 2026 Biplob Majumder. All Rights Reserved.</p>
     </footer>
 
-    <!-- JavaScript code for See More / See Less functionality -->
+    <!-- JavaScript code -->
     <script>
-        /* Travel News Toggle */
-        function toggleNews() {
-            var hiddenCards = document.querySelectorAll('.news-card.hidden-card, .news-card.shown-extra');
-            var btn = document.getElementById('toggleNewsBtn');
-            
-            hiddenCards.forEach(function(card) {
-                if (card.classList.contains('hidden-card')) {
-                    card.classList.remove('hidden-card');
-                    card.classList.add('shown-extra');
-                } else {
-                    card.classList.remove('shown-extra');
-                    card.classList.add('hidden-card');
-                }
-            });
+        document.addEventListener("DOMContentLoaded", function() {
+            initSection('newsGrid', 'newsSeeMoreBtnContainer', 2); // Show first 2 news cards
+            initSection('vlogGrid', 'vlogSeeMoreBtnContainer', 5); // Show first 5 video cards
+        });
 
-            if (btn.querySelector('span').innerText.includes('See More')) {
-                btn.innerHTML = '<span>কম দেখুন (See Less)</span> <i class="fas fa-chevron-up"></i>';
+        function initSection(gridId, btnContainerId, limit) {
+            let grid = document.getElementById(gridId);
+            let btnContainer = document.getElementById(btnContainerId);
+            if (!grid) return;
+
+            let items = grid.children;
+            if (items.length > limit) {
+                btnContainer.style.display = 'block';
+                for (let i = limit; i < items.length; i++) {
+                    items[i].classList.add('hidden-item');
+                }
             } else {
-                btn.innerHTML = '<span>আরও দেখুন (See More)</span> <i class="fas fa-chevron-down"></i>';
+                btnContainer.style.display = 'none';
             }
         }
 
-        /* Vlog Videos Toggle */
-        function toggleVlogs() {
-            var hiddenVlogs = document.querySelectorAll('.vlog-card.hidden-vlog-card, .vlog-card.shown-vlog-extra');
-            var btn = document.getElementById('toggleVlogBtn');
-            
-            hiddenVlogs.forEach(function(card) {
-                if (card.classList.contains('hidden-vlog-card')) {
-                    card.classList.remove('hidden-vlog-card');
-                    card.classList.add('shown-vlog-extra');
-                } else {
-                    card.classList.remove('shown-vlog-extra');
-                    card.classList.add('hidden-vlog-card');
-                }
-            });
+        function toggleItems(gridId, btnContainerId) {
+            let grid = document.getElementById(gridId);
+            let btn = document.querySelector(`#${btnContainerId} button`);
+            let hiddenItems = grid.querySelectorAll('.hidden-item');
+            let isExpanding = hiddenItems.length > 0;
 
-            if (btn.querySelector('span').innerText.includes('See More')) {
-                btn.innerHTML = '<span>কম ভিডিও দেখুন (See Less)</span> <i class="fas fa-chevron-up"></i>';
+            if (isExpanding) {
+                hiddenItems.forEach(item => {
+                    item.classList.remove('hidden-item');
+                    item.dataset.toggled = 'true';
+                });
+                if (btn.querySelector('span').innerText.includes('ভিডিও')) {
+                    btn.innerHTML = '<span>কম ভিডিও দেখুন (See Less)</span> <i class="fas fa-chevron-up"></i>';
+                } else {
+                    btn.innerHTML = '<span>কম দেখুন (See Less)</span> <i class="fas fa-chevron-up"></i>';
+                }
             } else {
-                btn.innerHTML = '<span>আরও ভিডিও দেখুন (See More)</span> <i class="fas fa-chevron-down"></i>';
+                let toggledItems = grid.querySelectorAll('[data-toggled="true"]');
+                toggledItems.forEach(item => {
+                    item.classList.add('hidden-item');
+                    item.removeAttribute('data-toggled');
+                });
+                if (btn.querySelector('span').innerText.includes('ভিডিও')) {
+                    btn.innerHTML = '<span>আরও ভিডিও দেখুন (See More)</span> <i class="fas fa-chevron-down"></i>';
+                } else {
+                    btn.innerHTML = '<span>আরও দেখুন (See More)</span> <i class="fas fa-chevron-down"></i>';
+                }
+            }
+        }
+
+        // Modal Control Functions
+        function openModal(id) {
+            document.getElementById(id).style.display = "block";
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            let modals = document.getElementsByClassName('modal');
+            for (let i = 0; i < modals.length; i++) {
+                if (event.target == modals[i]) {
+                    modals[i].style.display = "none";
+                }
             }
         }
     </script>
