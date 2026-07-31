@@ -23,16 +23,13 @@
             overflow-x: hidden;
         }
 
-        /* Header Background (লোগো বামে নেওয়ার কারণে বাইকের ছবি এখন সম্পূর্ণ খালি ও স্পষ্ট) */
+        /* Header Background Layout */
         header {
             position: relative;
-            height: 480px;
+            height: 520px;
             background: url('https://i.postimg.cc/MHYHTHss/IMG-20250601-WA0009.jpg') no-repeat center center/cover;
-            display: flex;
-            align-items: flex-start; /* কন্টেন্ট উপরে নিয়ে আসার জন্য */
-            justify-content: flex-start; /* কন্টেন্ট বামে নিয়ে আসার জন্য */
-            text-align: left;
             color: white;
+            padding: 20px;
         }
 
         .header-overlay {
@@ -48,33 +45,43 @@
         .header-content {
             position: relative;
             z-index: 2;
-            padding: 25px 20px;
-            max-width: 85%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Top Layout: Profile Pic + Name Side by Side */
+        .top-profile-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
         .profile-pic {
-            width: 90px;
-            height: 90px;
+            width: 85px;
+            height: 85px;
             border-radius: 50%;
             border: 3px solid #ffcc00;
             object-fit: cover;
-            margin-bottom: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            flex-shrink: 0;
+        }
+
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
         }
 
         header h1 {
-            font-size: 1.8rem;
-            margin-bottom: 5px;
+            font-size: 1.6rem;
             color: #ffcc00;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
             font-weight: 700;
-        }
-
-        header p {
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
-            font-weight: 400;
+            line-height: 1.2;
+            margin: 0;
         }
 
         /* Glowing Follow Button */
@@ -84,11 +91,11 @@
             gap: 8px;
             background: linear-gradient(45deg, #1877f2, #00c6ff);
             color: white;
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             box-shadow: 0 0 15px rgba(24, 119, 242, 0.8);
             animation: pulseGlow 2s infinite;
             transition: all 0.3s ease;
@@ -104,6 +111,23 @@
             0% { box-shadow: 0 0 0 0 rgba(24, 119, 242, 0.8); }
             70% { box-shadow: 0 0 0 15px rgba(24, 119, 242, 0); }
             100% { box-shadow: 0 0 0 0 rgba(24, 119, 242, 0); }
+        }
+
+        /* Bottom Text Tagline */
+        .bottom-tagline {
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        .bottom-tagline p {
+            font-size: 1.05rem;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+            font-weight: 600;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 8px 12px;
+            border-radius: 8px;
+            display: inline-block;
         }
 
         /* Main Container */
@@ -336,16 +360,27 @@
 </head>
 <body>
 
-    <!-- Header (বাইকের পুরো পিকচার স্পষ্ট দেখার জন্য বামে সেট করা কন্টেন্ট) -->
+    <!-- Header Section -->
     <header>
         <div class="header-overlay"></div>
         <div class="header-content">
-            <img src="https://i.postimg.cc/rmWrN8m2/IMG-8930.jpg" alt="Biplob Majumder" class="profile-pic">
-            <h1>Biplob Majumder</h1>
-            <p>দুপায়ে বাইক, চোখে স্বপ্ন — বাংলায় ঘুরে বেড়াই নতুন গল্পে</p>
-            <a href="https://www.facebook.com/biplobmajumder99" target="_blank" class="social-btn">
-                <i class="fab fa-facebook-f"></i> আমার ফেসবুক পেজ ফলো করুন
-            </a>
+            
+            <!-- উপরে: প্রোফাইল পিকচার + ডানে নাম ও ফলো বাটন -->
+            <div class="top-profile-area">
+                <img src="https://i.postimg.cc/rmWrN8m2/IMG-8930.jpg" alt="Biplob Majumder" class="profile-pic">
+                <div class="profile-info">
+                    <h1>Biplob Majumder</h1>
+                    <a href="https://www.facebook.com/biplobmajumder99" target="_blank" class="social-btn">
+                        <i class="fab fa-facebook-f"></i> আমার ফেসবুক পেজ ফলো করুন
+                    </a>
+                </div>
+            </div>
+
+            <!-- নিচে: বাইকের ছবির ফাঁকা জায়গায় সাবটাইটেল -->
+            <div class="bottom-tagline">
+                <p>বাইক রাইডিং, ইতিহাস ও প্রকৃতির খোঁজে এক পথিকের গল্প</p>
+            </div>
+
         </div>
     </header>
 
