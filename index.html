@@ -131,6 +131,67 @@
             color: #333;
         }
 
+        /* Vlog Post Section Styling */
+        .vlog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .vlog-card {
+            background: #fff;
+            border: 1px solid #e1e1e1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .vlog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .vlog-content {
+            padding: 20px;
+        }
+
+        .vlog-date {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 5px;
+        }
+
+        .vlog-title {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .vlog-desc {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .vlog-link {
+            display: inline-block;
+            background-color: #e74c3c;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .vlog-link:hover {
+            background-color: #c0392b;
+        }
+
         /* Contact Section */
         .contact-info {
             font-size: 1.1rem;
@@ -160,7 +221,6 @@
 
     <!-- Header & Banner -->
     <header>
-        <!-- এখানে আপনার ছবির লিংক বসাতে পারেন -->
         <img src="https://via.placeholder.com/150" alt="Biplob Majumder" class="profile-pic">
         <h1>Biplob Majumder</h1>
         <p>বাইক ভ্রমণপ্রেমী ও কন্টেন্ট ক্রিয়েটর | বাগেরহাট, চিতলমারী</p>
@@ -199,6 +259,38 @@
                     <i class="fas fa-map-marked-alt"></i>
                     <h3>দর্শনীয় স্থান</h3>
                 </div>
+            </div>
+        </section>
+
+        <!-- NEW: Vlog Posts & Video Links Section -->
+        <section>
+            <h2>সাম্প্রতিক ভ্লগ ও ভিডিও</h2>
+            <div class="vlog-grid">
+                
+                <!-- ভ্লগ পোস্ট ১ (নতুন পোস্ট দিতে চাইলে এটি কপি করে উপরে বসাবেন) -->
+                <div class="vlog-card">
+                    <div class="vlog-content">
+                        <div class="vlog-date"><i class="far fa-calendar-alt"></i> আগস্ট ১, ২০২৬</div>
+                        <h3 class="vlog-title">চিতলমারীর ঐতিহ্যবাহী স্থান বাইক ট্যুর</h3>
+                        <p class="vlog-desc">আজকে ঘুরে এলাম আমাদের চিতলমারীর সুন্দর একটি ঐতিহাসিক স্থানে। পুরো রাইডিংয়ের অভিজ্ঞতা শেয়ার করেছি।</p>
+                        <a href="আপনার_ফেসবুক_বা_ইউটিউব_ভিডিওর_লিংক_এখানে_দিন" target="_blank" class="vlog-link">
+                            <i class="fas fa-play-circle"></i> ভিডিওটি দেখুন
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ভ্লগ পোস্ট ২ -->
+                <div class="vlog-card">
+                    <div class="vlog-content">
+                        <div class="vlog-date"><i class="far fa-calendar-alt"></i> জুলাই ২৮, ২০২৬</div>
+                        <h3 class="vlog-title">বাগেরহাটের ঐতিহাসিক প্রাচীন মন্দির ট্যুর</h3>
+                        <p class="vlog-desc">বাইক নিয়ে বেরিয়ে পড়েছিলাম বাগেরহাটের এক চমৎকার প্রাচীন মন্দির দর্শনে। সাথে ছিল দারুণ কিছু মুহূর্ত।</p>
+                        <a href="আপনার_ফেসবুক_বা_ইউটিউব_ভিডিওর_লিংক_এখানে_দিন" target="_blank" class="vlog-link">
+                            <i class="fas fa-play-circle"></i> ভিডিওটি দেখুন
+                        </a>
+                    </div>
+                </div>
+
             </div>
         </section>
 
