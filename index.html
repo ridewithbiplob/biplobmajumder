@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biplob Majumder - Travel Vlogger</title>
-    <!-- Google Fonts for Bengali & English -->
+    <!-- Google Fonts & Font Awesome -->
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -131,7 +131,7 @@
             color: #333;
         }
 
-        /* Vlog Post Section Styling */
+        /* Vlog Grid & Video Player Styling */
         .vlog-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -151,6 +151,23 @@
         .vlog-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .facebook-video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .facebook-video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         .vlog-content {
@@ -173,23 +190,6 @@
         .vlog-desc {
             font-size: 0.95rem;
             color: #666;
-            margin-bottom: 15px;
-        }
-
-        .vlog-link {
-            display: inline-block;
-            background-color: #e74c3c;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        .vlog-link:hover {
-            background-color: #c0392b;
         }
 
         /* Contact Section */
@@ -235,11 +235,11 @@
         <section>
             <h2>আমার সম্পর্কে</h2>
             <p class="about-text">
-                নমস্কার! আমি বিপ্লব মজুমদার। বাগেরহাট জেলার চিতলমারী উপজেলায় আমার বসবাস। দেশের বিভিন্ন দর্শনীয় স্থানগুলো আপনাদের মাঝে ভিডিওর মাধ্যমে তুলে ধরাই আমার মূল উদ্দেশ্য। আমি বাইক নিয়ে একা বা দলবেধে বিভিন্ন প্রান্তে ছুটে বেড়াই। আমার ভিডিওগুলোতে আপনারা দেখতে পাবেন বাংলার সুন্দর প্রকৃতি, ঐতিহাসিক স্থান, প্রাচীন মন্দির এবং চমৎকার সব ট্যুরিস্ট প্লেসের ইতিহাস ও রোমাঞ্চকর বাইক রাইডিংয়ের গল্প।
+                নমস্কার! আমি বিপ্লব মজুমদার। বাগেরহাট জেলার চিতলমারী উপজেলায় আমার বসবাস। দেশের বিভিন্ন দর্শনীয় স্থানগুলো আপনাদের মাঝে ভিডিওর মাধ্যমে তুলে ধরাই আমার মূল উদ্দেশ্য। আমি বাইক নিয়ে একা বা দলবেধে বিভিন্ন প্রান্তে ছুটে বেড়াই। আমার ভিডিওগুলোতে আপনারা দেখতে পাবেন বাংলার সুন্দর প্রকৃতি, ঐতিহাসিক স্থান, প্রাচীন মন্দির এবং চমৎকার সব ট্যুরিস্ট প্লেসের ইতিহাস ও রোমাঞ্চকর বাইক রাইডিংয়ের গল্প।
             </p>
         </section>
 
-        <!-- Video Categories / What I Cover -->
+        <!-- Video Categories -->
         <section>
             <h2>আমার ভিডিওর ধরন</h2>
             <div class="categories">
@@ -262,32 +262,24 @@
             </div>
         </section>
 
-        <!-- NEW: Vlog Posts & Video Links Section -->
+        <!-- Vlog Posts Section -->
         <section>
             <h2>সাম্প্রতিক ভ্লগ ও ভিডিও</h2>
             <div class="vlog-grid">
                 
-                <!-- ভ্লগ পোস্ট ১ (নতুন পোস্ট দিতে চাইলে এটি কপি করে উপরে বসাবেন) -->
+                <!-- পোস্ট ১: চিতলমারী শিব মন্দির -->
                 <div class="vlog-card">
+                    <div class="facebook-video-container">
+                        <iframe 
+                            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fbiplobmajumder99%2Fvideos%2F1834029950590572%2F&show_text=false&autoplay=true&mute=true" 
+                            allowfullscreen="true" 
+                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                        </iframe>
+                    </div>
                     <div class="vlog-content">
                         <div class="vlog-date"><i class="far fa-calendar-alt"></i> আগস্ট ১, ২০২৬</div>
-                        <h3 class="vlog-title">চিতলমারীর ঐতিহ্যবাহী স্থান বাইক ট্যুর</h3>
-                        <p class="vlog-desc">আজকে ঘুরে এলাম আমাদের চিতলমারীর সুন্দর একটি ঐতিহাসিক স্থানে। পুরো রাইডিংয়ের অভিজ্ঞতা শেয়ার করেছি।</p>
-                        <a href="আপনার_ফেসবুক_বা_ইউটিউব_ভিডিওর_লিংক_এখানে_দিন" target="_blank" class="vlog-link">
-                            <i class="fas fa-play-circle"></i> ভিডিওটি দেখুন
-                        </a>
-                    </div>
-                </div>
-
-                <!-- ভ্লগ পোস্ট ২ -->
-                <div class="vlog-card">
-                    <div class="vlog-content">
-                        <div class="vlog-date"><i class="far fa-calendar-alt"></i> জুলাই ২৮, ২০২৬</div>
-                        <h3 class="vlog-title">বাগেরহাটের ঐতিহাসিক প্রাচীন মন্দির ট্যুর</h3>
-                        <p class="vlog-desc">বাইক নিয়ে বেরিয়ে পড়েছিলাম বাগেরহাটের এক চমৎকার প্রাচীন মন্দির দর্শনে। সাথে ছিল দারুণ কিছু মুহূর্ত।</p>
-                        <a href="আপনার_ফেসবুক_বা_ইউটিউব_ভিডিওর_লিংক_এখানে_দিন" target="_blank" class="vlog-link">
-                            <i class="fas fa-play-circle"></i> ভিডিওটি দেখুন
-                        </a>
+                        <h3 class="vlog-title">চিতলমারী খড়মখালি গরিবপুর ভাইরাল শিব মন্দির</h3>
+                        <p class="vlog-desc">চিতলমারীর খড়মখালি গরিবপুর এলাকার ঐতিহাসিক ও ভাইরাল শিব মন্দির দর্শনের বিশেষ অভিজ্ঞতা।</p>
                     </div>
                 </div>
 
