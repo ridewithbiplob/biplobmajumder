@@ -51,7 +51,6 @@
             justify-content: space-between;
         }
 
-        /* Top Layout: Profile Pic + Name Side by Side */
         .top-profile-area {
             display: flex;
             align-items: center;
@@ -84,7 +83,6 @@
             margin: 0;
         }
 
-        /* Glowing Follow Button */
         .social-btn {
             display: inline-flex;
             align-items: center;
@@ -113,7 +111,6 @@
             100% { box-shadow: 0 0 0 0 rgba(24, 119, 242, 0); }
         }
 
-        /* Bottom Text Tagline */
         .bottom-tagline {
             text-align: left;
             margin-bottom: 10px;
@@ -130,14 +127,13 @@
             display: inline-block;
         }
 
-        /* Main Container */
+        /* Container */
         .container {
             max-width: 1050px;
             margin: 30px auto;
             padding: 0 20px;
         }
 
-        /* Section Styling */
         section {
             background: white;
             padding: 30px;
@@ -173,6 +169,104 @@
             color: #475569;
             text-align: justify;
             line-height: 1.8;
+        }
+
+        /* Travel Blog / News Style Cards */
+        .travel-news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .news-card {
+            background: #fff;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .news-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 20px;
+        }
+
+        .news-tag {
+            background: #ffcc00;
+            color: #000;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .news-title {
+            font-size: 1.2rem;
+            color: #0f172a;
+            margin: 10px 0;
+            font-weight: 700;
+        }
+
+        .news-info {
+            background: #f8fafc;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #334155;
+            margin-bottom: 12px;
+        }
+
+        .news-info p {
+            margin-bottom: 4px;
+        }
+
+        .news-info i {
+            color: #1877f2;
+            width: 20px;
+        }
+
+        .news-desc {
+            font-size: 0.95rem;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* See More Button Style */
+        .see-more-container {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .see-more-btn {
+            background: #1e293b;
+            color: #ffcc00;
+            border: none;
+            padding: 10px 25px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .see-more-btn:hover {
+            background: #1877f2;
+            color: #fff;
         }
 
         /* Gallery Slideshow */
@@ -306,6 +400,11 @@
             color: #475569;
         }
 
+        /* Class to Hide Extra Items for See More */
+        .hidden-card {
+            display: none !important;
+        }
+
         /* Mobile Friendly Contact Info */
         .contact-info {
             font-size: 1.05rem;
@@ -347,7 +446,6 @@
             font-size: 0.95rem;
         }
 
-        /* Mobile Adjustments */
         @media (max-width: 600px) {
             section {
                 padding: 20px 15px;
@@ -364,8 +462,6 @@
     <header>
         <div class="header-overlay"></div>
         <div class="header-content">
-            
-            <!-- উপরে: প্রোফাইল পিকচার + ডানে নাম ও ফলো বাটন -->
             <div class="top-profile-area">
                 <img src="https://i.postimg.cc/rmWrN8m2/IMG-8930.jpg" alt="Biplob Majumder" class="profile-pic">
                 <div class="profile-info">
@@ -376,11 +472,9 @@
                 </div>
             </div>
 
-            <!-- নিচে: বাইকের ছবির ফাঁকা জায়গায় সাবটাইটেল -->
             <div class="bottom-tagline">
                 <p>বাইক রাইডিং, ইতিহাস ও প্রকৃতির খোঁজে এক পথিকের গল্প</p>
             </div>
-
         </div>
     </header>
 
@@ -394,7 +488,64 @@
             </p>
         </section>
 
-        <!-- ২. আমার গ্যালারি সেকশন -->
+        <!-- ২. ভ্রমণ গাইড ও নিউজ ব্লগের সেকশন -->
+        <section>
+            <h2>ভ্রমণ গাইড ও রুট ম্যাপ</h2>
+            <div class="travel-news-grid">
+                
+                <!-- গাইড ১ -->
+                <div class="news-card">
+                    <img src="https://i.postimg.cc/3xJfSqmF/FB-IMG-1774373034055.jpg" alt="খড়মখালি শিব মন্দির" class="news-img">
+                    <div class="news-content">
+                        <span class="news-tag">চিতলমারী ট্যুর</span>
+                        <h3 class="news-title">খড়মখালি গরিবপুর ভাইরাল শিব মন্দির ভ্রমণ গাইড</h3>
+                        <div class="news-info">
+                            <p><i class="fas fa-route"></i> <strong>যাতায়াত:</strong> চিতলমারী বাজার থেকে ইজিবাইক বা বাইকে ১৫ মিনিট।</p>
+                            <p><i class="fas fa-money-bill-wave"></i> <strong>ভাড়া:</strong> লোকাল ইজিবাইক ২০-৩০ টাকা।</p>
+                        </div>
+                        <p class="news-desc">প্রাচীন এই মন্দিরটি চিতলমারীর অত্যন্ত জনপ্রিয় একটি স্থান। বাইকে সরাসরি মন্দিরের একদম সামনে পর্যন্ত পৌঁছে যাওয়া যায়। বিকেলের পরিবেশ বেশ সুন্দর।</p>
+                    </div>
+                </div>
+
+                <!-- গাইড ২ -->
+                <div class="news-card">
+                    <img src="https://i.postimg.cc/XvMrQRyJ/lkk-(187)-JPG.jpg" alt="প্রশান্তি ক্যাফে" class="news-img">
+                    <div class="news-content">
+                        <span class="news-tag">খুলনা ট্যুর</span>
+                        <h3 class="news-title">রূপসা প্রশান্তি ক্যাফে ভ্রমণ ও যাতায়াত তথ্য</h3>
+                        <div class="news-info">
+                            <p><i class="fas fa-route"></i> <strong>যাতায়াত:</strong> রূপসা সেতু থেকে রূপসা নদী ঘেঁষে অল্প কিছু দূর।</p>
+                            <p><i class="fas fa-money-bill-wave"></i> <strong>ভাড়া:</strong> খুলনা শহর থেকে ৫০-৭০ টাকা খরচ।</p>
+                        </div>
+                        <p class="news-desc">নদীর পাড়ে বসে সময় কাটানোর চমৎকার এক জায়গা। বিকেলে বাইক রাইড নিয়ে ঘুরে আসার জন্য আদর্শ লোকেশন।</p>
+                    </div>
+                </div>
+
+                <!-- গাইড ৩ (See More চাপলে বের হবে) -->
+                <div class="news-card hidden-card">
+                    <img src="https://i.postimg.cc/NfktWZVb/DSC-0129-JPG.jpg" alt="সুন্দরবন রোড রাইড" class="news-img">
+                    <div class="news-content">
+                        <span class="news-tag">বাইক রাইডিং</span>
+                        <h3 class="news-title">বাগেরহাট টু মোংলা বাইক রাইডিং রুট</h3>
+                        <div class="news-info">
+                            <p><i class="fas fa-route"></i> <strong>যাতায়াত:</strong> বাগেরহাট মহাসড়ক ধরে সোজা মোংলা পোর্ট।</p>
+                            <p><i class="fas fa-money-bill-wave"></i> <strong>ভাড়া/ফুয়েল:</strong> বাইকের জ্বালানি খরচ আনুমানিক ২০০-২৫০ টাকা।</p>
+                        </div>
+                        <p class="news-desc">দুই পাশের চমৎকার প্রকৃতির মধ্য দিয়ে বাইক চালানোর দারুণ অভিজ্ঞতা পাবেন এই রুটে। রাস্তা বেশ মসৃণ ও সুন্দর।</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- See More / See Less Button -->
+            <div class="see-more-container">
+                <button class="see-more-btn" id="toggleNewsBtn" onclick="toggleNews()">
+                    <span>আরও দেখুন (See More)</span> <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- ৩. আমার গ্যালারি সেকশন -->
         <section>
             <h2>আমার গ্যালারি</h2>
             <div class="gallery-slider">
@@ -405,7 +556,7 @@
             </div>
         </section>
 
-        <!-- ৩. আমার ভিডিওর ধরন -->
+        <!-- ৪. আমার ভিডিওর ধরন -->
         <section>
             <h2>আমার ভিডিওর ধরন</h2>
             <div class="categories">
@@ -428,12 +579,12 @@
             </div>
         </section>
 
-        <!-- ৪. সাম্প্রতিক ভ্লগ ও ভিডিও -->
+        <!-- ৫. সাম্প্রতিক ভ্লগ ও ভিডিও (এখন প্রথম ৫টি দেখাবে, বাকিগুলো See More-এ থাকবে) -->
         <section>
             <h2>সাম্প্রতিক ভ্লগ ও ভিডিও</h2>
             <div class="vlog-grid">
                 
-                <!-- পোস্ট ৩: চিতলমারীর চুইঝালের সিংগাড়া -->
+                <!-- ভিডিও ১ -->
                 <div class="vlog-card">
                     <div class="facebook-video-container">
                         <iframe 
@@ -449,7 +600,7 @@
                     </div>
                 </div>
 
-                <!-- পোস্ট ২: প্রশান্তি ক্যাফে, রূপসা -->
+                <!-- ভিডিও ২ -->
                 <div class="vlog-card">
                     <div class="facebook-video-container">
                         <iframe 
@@ -465,7 +616,7 @@
                     </div>
                 </div>
 
-                <!-- পোস্ট ১: চিতলমারী শিব মন্দির -->
+                <!-- ভিডিও ৩ -->
                 <div class="vlog-card">
                     <div class="facebook-video-container">
                         <iframe 
@@ -481,10 +632,65 @@
                     </div>
                 </div>
 
+                <!-- ভিডিও ৪ -->
+                <div class="vlog-card">
+                    <div class="facebook-video-container">
+                        <iframe 
+                            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fbiplobmajumder99%2Fvideos%2F1804947420195309%2F&show_text=false&autoplay=true&mute=true" 
+                            allowfullscreen="true" 
+                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                        </iframe>
+                    </div>
+                    <div class="vlog-content">
+                        <div class="vlog-date"><i class="far fa-calendar-alt"></i> আগস্ট ১, ২০২৬</div>
+                        <h3 class="vlog-title">চিতলমারীর চুইঝালের সিংগাড়া (ডেমো ৪)</h3>
+                        <p class="vlog-desc">চিতলমারীর বিখ্যাত ও সুস্বাদু চুইঝালের সিংগাড়া চেখে দেখার দারুণ এক অভিজ্ঞতা।</p>
+                    </div>
+                </div>
+
+                <!-- ভিডিও ৫ -->
+                <div class="vlog-card">
+                    <div class="facebook-video-container">
+                        <iframe 
+                            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fbiplobmajumder99%2Fvideos%2F880152824368680%2F&show_text=false&autoplay=true&mute=true" 
+                            allowfullscreen="true" 
+                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                        </iframe>
+                    </div>
+                    <div class="vlog-content">
+                        <div class="vlog-date"><i class="far fa-calendar-alt"></i> আগস্ট ১, ২০২৬</div>
+                        <h3 class="vlog-title">প্রশান্তি ক্যাফে || রূপসা, খুলনা (ডেমো ৫)</h3>
+                        <p class="vlog-desc">খুলনার রূপসায় অবস্থিত মনোরম 'প্রশান্তি ক্যাফে' ভ্রমণের সুন্দর কিছু মুহূর্ত ও অভিজ্ঞতা।</p>
+                    </div>
+                </div>
+
+                <!-- ভিডিও ৬ (See More চাপলে বের হবে) -->
+                <div class="vlog-card hidden-vlog-card">
+                    <div class="facebook-video-container">
+                        <iframe 
+                            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fbiplobmajumder99%2Fvideos%2F1834029950590572%2F&show_text=false&autoplay=true&mute=true" 
+                            allowfullscreen="true" 
+                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                        </iframe>
+                    </div>
+                    <div class="vlog-content">
+                        <div class="vlog-date"><i class="far fa-calendar-alt"></i> আগস্ট ১, ২০২৬</div>
+                        <h3 class="vlog-title">চিতলমারী খড়মখালি ভাইরাল শিব মন্দির (ডেমো ৬)</h3>
+                        <p class="vlog-desc">চিতলমারীর খড়মখালি গরিবপুর এলাকার ঐতিহাসিক ও ভাইরাল শিব মন্দির দর্শনের বিশেষ অভিজ্ঞতা।</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Video See More / See Less Button -->
+            <div class="see-more-container">
+                <button class="see-more-btn" id="toggleVlogBtn" onclick="toggleVlogs()">
+                    <span>আরও ভিডিও দেখুন (See More)</span> <i class="fas fa-chevron-down"></i>
+                </button>
             </div>
         </section>
 
-        <!-- ৫. যোগাযোগ -->
+        <!-- ৬. যোগাযোগ -->
         <section>
             <h2>যোগাযোগ</h2>
             <div class="contact-info">
@@ -509,6 +715,53 @@
     <footer>
         <p>&copy; 2026 Biplob Majumder. All Rights Reserved.</p>
     </footer>
+
+    <!-- JavaScript code for See More / See Less functionality -->
+    <script>
+        /* Travel News Toggle */
+        function toggleNews() {
+            var hiddenCards = document.querySelectorAll('.news-card.hidden-card, .news-card.shown-extra');
+            var btn = document.getElementById('toggleNewsBtn');
+            
+            hiddenCards.forEach(function(card) {
+                if (card.classList.contains('hidden-card')) {
+                    card.classList.remove('hidden-card');
+                    card.classList.add('shown-extra');
+                } else {
+                    card.classList.remove('shown-extra');
+                    card.classList.add('hidden-card');
+                }
+            });
+
+            if (btn.querySelector('span').innerText.includes('See More')) {
+                btn.innerHTML = '<span>কম দেখুন (See Less)</span> <i class="fas fa-chevron-up"></i>';
+            } else {
+                btn.innerHTML = '<span>আরও দেখুন (See More)</span> <i class="fas fa-chevron-down"></i>';
+            }
+        }
+
+        /* Vlog Videos Toggle */
+        function toggleVlogs() {
+            var hiddenVlogs = document.querySelectorAll('.vlog-card.hidden-vlog-card, .vlog-card.shown-vlog-extra');
+            var btn = document.getElementById('toggleVlogBtn');
+            
+            hiddenVlogs.forEach(function(card) {
+                if (card.classList.contains('hidden-vlog-card')) {
+                    card.classList.remove('hidden-vlog-card');
+                    card.classList.add('shown-vlog-extra');
+                } else {
+                    card.classList.remove('shown-vlog-extra');
+                    card.classList.add('hidden-vlog-card');
+                }
+            });
+
+            if (btn.querySelector('span').innerText.includes('See More')) {
+                btn.innerHTML = '<span>কম ভিডিও দেখুন (See Less)</span> <i class="fas fa-chevron-up"></i>';
+            } else {
+                btn.innerHTML = '<span>আরও ভিডিও দেখুন (See More)</span> <i class="fas fa-chevron-down"></i>';
+            }
+        }
+    </script>
 
 </body>
 </html>
